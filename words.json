@@ -1,0 +1,195 @@
+{
+
+  "latwy": [
+
+    "ekran",
+
+    "biurko",
+
+    "lampa",
+
+    "kubek",
+
+    "drzewo",
+
+    "krowa",
+
+    "piesek",
+
+    "rower",
+
+    "morze",
+
+    "piasek",
+
+    "statek",
+
+    "pociąg",
+
+    "lotnik",
+
+    "rybak",
+
+    "trawa",
+
+    "zamek",
+
+    "klucz",
+
+    "drzwi",
+
+    "brama",
+
+    "klamka",
+
+    "miasto",
+
+    "basen",
+
+    "rzeka",
+
+    "potok",
+
+    "obraz",
+
+    "ramka",
+
+    "zeszyt",
+
+    "ołówek",
+
+    "notes",
+
+    "karta"
+
+  ],
+
+  "sredni": [
+
+    "klawiatura",
+
+    "telewizor",
+
+    "słuchawki",
+
+    "podkładka",
+
+    "sterowniki",
+
+    "kalkulator",
+
+    "biblioteka",
+
+    "autostrada",
+
+    "ciężarówka",
+
+    "wycieczka",
+
+    "piekarnia",
+
+    "kawiarnia",
+
+    "kierownik",
+
+    "prezydent",
+
+    "mieszkanie",
+
+    "kalendarz",
+
+    "parasolka",
+
+    "truskawka",
+
+    "rzodkiewka",
+
+    "pomarańcza",
+
+    "mandarynka",
+
+    "czekolada",
+
+    "ciasteczko",
+
+    "cukiernik",
+
+    "mechanika",
+
+    "astronomia",
+
+    "fotografia",
+
+    "gramatyka",
+
+    "ortografia",
+
+    "słownictwo"
+
+  ],
+
+  "trudny": [
+
+    "wiersz poleceń",
+
+    "baza danych sql",
+
+    "inżynier ruchu",
+
+    "loty kosmiczne",
+
+    "woda mineralna",
+
+    "maszyna cyfrowa",
+
+    "statek piracki",
+
+    "królewski pałac",
+
+    "bilet okresowy",
+
+    "karta pokładowa",
+
+    "szybki internet",
+
+    "sztuka filmowa",
+
+    "wirtualny świat",
+
+    "tajny dokument",
+
+    "wielki człowiek",
+
+    "dowód osobisty",
+
+    "karta kredytowa",
+
+    "przelew bankowy",
+
+    "egzamin pisemny",
+
+    "wyższa uczelnia",
+
+    "finał turnieju",
+
+    "mecz piłkarski",
+
+    "reaktor jądrowy",
+
+    "promieniowanie",
+
+    "telekomunikacja",
+
+    "telekonferencja",
+
+    "aparat cyfrowy",
+
+    "instrument dęty",
+
+    "utwór muzyczny",
+
+    "mała orkiestra"
+
+  ]
+
+}
