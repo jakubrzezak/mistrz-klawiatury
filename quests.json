@@ -1,0 +1,62 @@
+{
+  "pierwsze_starcie": {
+    "nazwa": "Pierwsze koty za płoty",
+    "opis": "Rozegraj swoją pierwszą grę do końca."
+  },
+  "rozgrzewka": {
+    "nazwa": "Rozgrzewka",
+    "opis": "Wpisz poprawnie 30 słów na poziomie łatwym."
+  },
+  "zloty_srodek": {
+    "nazwa": "Złoty Środek",
+    "opis": "Wpisz poprawnie 30 słów na poziomie średnim."
+  },
+  "twardziel": {
+    "nazwa": "Twardziel",
+    "opis": "Wpisz poprawnie 30 słów na poziomie trudnym."
+  },
+  "mistrz_ortografii": {
+    "nazwa": "Mistrz Ortografii",
+    "opis": "Wpisz poprawnie 50 słów ogółem we wszystkich grach."
+  },
+  "maszyna_do_pisania": {
+    "nazwa": "Maszyna do pisania",
+    "opis": "Wpisz łącznie 200 słów (niezależnie czy dobrze, czy źle)."
+  },
+  "niezatrzymany": {
+    "nazwa": "Niezatrzymany",
+    "opis": "Zdobądź serię 10 poprawnych słów z rzędu bez ani jednego błędu."
+  },
+  "perfekcjonista": {
+    "nazwa": "Perfekcjonista",
+    "opis": "Zdobądź imponującą serię 30 poprawnych słów z rzędu."
+  },
+  "szybki_bill": {
+    "nazwa": "Szybki Bill",
+    "opis": "Zejdź z czasem wpisywania słowa poniżej 2 sekund."
+  },
+  "flash": {
+    "nazwa": "Flash",
+    "opis": "Wpisz poprawne słowo w czasie poniżej 1 sekundy. Prawdziwa błyskawica!"
+  },
+  "wymiatacz": {
+    "nazwa": "Pogromca Wyzwań",
+    "opis": "Wpisz poprawnie 10 słów w specjalnym trybie Rozsypanki."
+  },
+  "pan_chaosu": {
+    "nazwa": "Pan Chaosu",
+    "opis": "Zapanuj nad chaosem i wpisz poprawnie 30 słów w Rozsypance."
+  },
+  "maratonczyk": {
+    "nazwa": "Maratończyk",
+    "opis": "Wykaż się cierpliwością i rozegraj łącznie 20 pełnych gier."
+  },
+  "weteran": {
+    "nazwa": "Weteran Klawiatury",
+    "opis": "Oddaj życie grze. Rozegraj łącznie 50 pełnych gier."
+  },
+  "tragiczny_pisarz": {
+    "nazwa": "Tragiczny Pisarz",
+    "opis": "Popełnij łącznie 30 błędów podczas pisania. Klawiatura do wymiany!"
+  }
+}
