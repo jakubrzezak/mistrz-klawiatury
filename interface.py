@@ -84,10 +84,30 @@ class MistrzKlawiaturyUI:
         questy = data_manager.wczytaj_dane_json('quests.json')
         odblokowane = stats.get("odblokowane_questy", [])
         
-        tekst = "Twoje Osiągnięcia:\n\n"
+        opisy_questow = {
+            "pierwsze_starcie": "Rozegraj swoją pierwszą grę",
+            "rozgrzewka": "Wpisz poprawnie 30 łatwych słów",
+            "zloty_srodek": "Wpisz poprawnie 30 średnich słów",
+            "twardziel": "Wpisz poprawnie 30 trudnych słów",
+            "mistrz_ortografii": "Wpisz poprawnie 50 słów",
+            "maszyna_do_pisania": "Wpisz 200 słów ogółem",
+            "niezatrzymany": "Osiągnij serię 10 słów bez błędu",
+            "perfekcjonista": "Osiągnij serię 30 słów bez błędu",
+            "szybki_bill": "Wpisz słowo w mniej niż 2 sekundy",
+            "flash": "Wpisz słowo w mniej niż 1 sekundę",
+            "wymiatacz": "Odgadnij 10 słów w Rozsypance",
+            "pan_chaosu": "Odgadnij 30 słów w Rozsypance",
+            "maratonczyk": "Rozegraj 20 pełnych gier",
+            "weteran": "Rozegraj 50 pełnych gier",
+            "tragiczny_pisarz": "Popełnij 30 błędów"
+        }
+        
+        tekst = "🏆 TWOJE OSIĄGNIĘCIA:\n\n"
         for id_q, dane_q in questy.items():
             status = "✅" if id_q in odblokowane else "❌"
-            tekst += f"{status} {dane_q['nazwa']}\n"
+            opis = opisy_questow.get(id_q, "Ukryty wymóg")
+            
+            tekst += f"{status} {dane_q['nazwa']}\n      ➔ {opis}\n"
             
         messagebox.showinfo("Lista Questów", tekst)
 
@@ -116,7 +136,7 @@ class MistrzKlawiaturyUI:
         tk.Button(self.root, text="Exit", command=self.zakoncz_gre_awaryjnie, bg="red", fg="white").pack(side="bottom", pady=20)
         
         self.nastepne_slowo()
-    
+        
         if tryb != "nauka":
             self.aktualizuj_stoper()
 
@@ -124,7 +144,6 @@ class MistrzKlawiaturyUI:
         if hasattr(self, 'lbl_stoper') and self.lbl_stoper.winfo_exists():
             uplynelo = time.time() - self.czas_startu
             self.lbl_stoper.config(text=f"Czas: {uplynelo:.1f} s")
-            # Zapętlenie funkcji co 100 ms
             self.root.after(100, self.aktualizuj_stoper)
 
     def nastepne_slowo(self):
