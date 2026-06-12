@@ -36,7 +36,6 @@ def aktualizuj_statystyki_i_sprawdz_questy(czy_poprawne, czas_sekundy, poziom, t
             stats['poprawne_slowa'] = stats.get('poprawne_slowa', 0) + 1
             stats['aktualna_seria_bez_bledu'] = stats.get('aktualna_seria_bez_bledu', 0) + 1
             
-            =
             if stats['aktualna_seria_bez_bledu'] > stats.get('najlepsza_seria_bez_bledu', 0):
                 stats['najlepsza_seria_bez_bledu'] = stats['aktualna_seria_bez_bledu']
                 
