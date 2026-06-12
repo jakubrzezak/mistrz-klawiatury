@@ -8,7 +8,7 @@ class MistrzKlawiaturyUI:
     def __init__(self, root):
         self.root = root
         self.root.title("Mistrz Klawiatury")
-        self.root.geometry("600x400")
+        self.root.geometry("600x500")
         
         self.aktualny_poziom = ""
         self.aktualny_tryb = ""
@@ -26,7 +26,7 @@ class MistrzKlawiaturyUI:
         self.wyczysc_okno()
         
         tytul = tk.Label(self.root, text="Mistrz Klawiatury", font=("Helvetica", 24, "bold"))
-        tytul.pack(pady=20)
+        tytul.pack(pady=15)
         
         ramka_przyciski = tk.Frame(self.root)
         ramka_przyciski.pack(pady=10)
@@ -36,9 +36,48 @@ class MistrzKlawiaturyUI:
         tk.Button(ramka_przyciski, text="Trudny", width=20, command=lambda: self.start_gry("trudny", "normalny")).grid(row=2, column=0, pady=5)
         
         tk.Button(ramka_przyciski, text="Nauka (bez czasu)", width=20, bg="lightblue", command=lambda: self.start_gry("latwy", "nauka")).grid(row=3, column=0, pady=5)
-        tk.Button(ramka_przyciski, text="Rozsypanka", width=20, bg="lightcoral", command=lambda: self.start_gry("sredni", "rozsypanka")).grid(row=4, column=0, pady=5)
+        tk.Button(ramka_przyciski, text="Rozsypanka", width=20, bg="lightcoral", command=lambda: self.start_gry("latwy", "rozsypanka")).grid(row=4, column=0, pady=5)
         
-        tk.Button(self.root, text="🏆 Podgląd Questów", command=self.pokaz_questy).pack(pady=20)
+        ramka_dolna = tk.Frame(self.root)
+        ramka_dolna.pack(pady=15)
+
+        tk.Button(ramka_dolna, text="📜 Zasady Gry", width=15, command=self.pokaz_zasady).grid(row=0, column=0, padx=5)
+        tk.Button(ramka_dolna, text="📊 Statystyki", width=15, command=self.pokaz_statystyki).grid(row=0, column=1, padx=5)
+        tk.Button(ramka_dolna, text="🏆 Questy", width=15, command=self.pokaz_questy).grid(row=0, column=2, padx=5)
+
+    def pokaz_zasady(self):
+        zasady = (
+            "🎯 ZASADY GRY:\n\n"
+            "1. Cel gry: Przepisuj poprawnie pojawiające się słowa najszybciej, jak potrafisz.\n"
+            "2. Tryby trudności: Różnią się długością i skomplikowaniem słów.\n"
+            "3. Tryb Nauka: Ćwiczysz bez włączonego stopera i bicia rekordów.\n"
+            "4. Rozsypanka: Musisz odgadnąć i wpisać ukryte słowo z wymieszanych liter.\n"
+            "5. Sterowanie: Zawsze zatwierdzaj wpisane słowo klawiszem ENTER.\n"
+            "6. System Questów: Gra w tle nagradza Cię za dobrą passę lub bicie rekordów. Powodzenia!"
+        )
+        messagebox.showinfo("Zasady Gry", zasady)
+
+    def pokaz_statystyki(self):
+        stats = data_manager.wczytaj_dane_json('stats.json')
+        
+        czas = stats.get('najlepszy_czas_slowa_sekundy', 99.0)
+        czas_tekst = f"{czas:.2f} s" if czas != 99.0 else "Brak rekordu"
+
+        tekst = (
+            "📊 TWOJE STATYSTYKI:\n\n"
+            f"Rozegrane pełne gry: {stats.get('rozegrane_gry', 0)}\n"
+            f"Wpisane słowa ogółem: {stats.get('wpisane_slowa_ogolem', 0)}\n"
+            f"✅ Poprawne słowa: {stats.get('poprawne_slowa', 0)}\n"
+            f"❌ Błędne słowa: {stats.get('bledne_slowa', 0)}\n"
+            f"🔥 Najlepsza seria bez błędu: {stats.get('najlepsza_seria_bez_bledu', 0)}\n"
+            f"⏱️ Najlepszy czas słowa: {czas_tekst}\n\n"
+            "Rozbicie na poziomy:\n"
+            f"Łatwe: {stats.get('poprawne_latwe', 0)} | "
+            f"Średnie: {stats.get('poprawne_srednie', 0)} | "
+            f"Trudne: {stats.get('poprawne_trudne', 0)}\n"
+            f"Rozsypanka: {stats.get('poprawne_rozsypanka', 0)}"
+        )
+        messagebox.showinfo("Statystyki", tekst)
 
     def pokaz_questy(self):
         stats = data_manager.wczytaj_dane_json('stats.json')
@@ -60,7 +99,6 @@ class MistrzKlawiaturyUI:
         
         self.wyczysc_okno()
         
-        # UI Ekranu Gry
         self.lbl_stoper = tk.Label(self.root, text="Czas leci! (Skup się)", font=("Helvetica", 12))
         if tryb != "nauka":
             self.lbl_stoper.pack(pady=5)
