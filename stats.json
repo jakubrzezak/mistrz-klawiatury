@@ -1,0 +1,27 @@
+{
+
+  "rozegrane_gry": 0,
+
+  "wpisane_slowa_ogolem": 0,
+
+  "poprawne_slowa": 0,
+
+  "bledne_slowa": 0,
+
+  "aktualna_seria_bez_bledu": 0,
+
+  "najlepsza_seria_bez_bledu": 0,
+
+  "najlepszy_czas_slowa_sekundy": 99.0,
+
+  "poprawne_latwe": 0,
+
+  "poprawne_srednie": 0,
+
+  "poprawne_trudne": 0,
+
+  "poprawne_rozsypanka": 0,
+
+  "odblokowane_questy": []
+
+}
