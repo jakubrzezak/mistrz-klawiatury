@@ -64,7 +64,7 @@ class MistrzKlawiaturyUI:
         czas_tekst = f"{czas:.2f} s" if czas != 99.0 else "Brak rekordu"
 
         tekst = (
-            "📊 TWOJE STATYSTYKI:\n\n"
+            "📊 TWOJE ŻYCIOWE STATYSTYKI:\n\n"
             f"Rozegrane pełne gry: {stats.get('rozegrane_gry', 0)}\n"
             f"Wpisane słowa ogółem: {stats.get('wpisane_slowa_ogolem', 0)}\n"
             f"✅ Poprawne słowa: {stats.get('poprawne_slowa', 0)}\n"
@@ -99,7 +99,7 @@ class MistrzKlawiaturyUI:
         
         self.wyczysc_okno()
         
-        self.lbl_stoper = tk.Label(self.root, text="Czas leci! (Skup się)", font=("Helvetica", 12))
+        self.lbl_stoper = tk.Label(self.root, text="", font=("Helvetica", 14, "bold"), fg="blue")
         if tryb != "nauka":
             self.lbl_stoper.pack(pady=5)
             
@@ -116,6 +116,16 @@ class MistrzKlawiaturyUI:
         tk.Button(self.root, text="Exit", command=self.zakoncz_gre_awaryjnie, bg="red", fg="white").pack(side="bottom", pady=20)
         
         self.nastepne_slowo()
+    
+        if tryb != "nauka":
+            self.aktualizuj_stoper()
+
+    def aktualizuj_stoper(self):
+        if hasattr(self, 'lbl_stoper') and self.lbl_stoper.winfo_exists():
+            uplynelo = time.time() - self.czas_startu
+            self.lbl_stoper.config(text=f"Czas: {uplynelo:.1f} s")
+            # Zapętlenie funkcji co 100 ms
+            self.root.after(100, self.aktualizuj_stoper)
 
     def nastepne_slowo(self):
         if self.indeks_slowa >= len(self.talia):
